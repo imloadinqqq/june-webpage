@@ -5,38 +5,53 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.social-links a {
+  display: block;
+  margin-bottom: 50px; /* Adjust the space between links as needed */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-links img {
+  width: 100px;
+  height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.social-links img:hover {
+  filter: drop-shadow(0 0 .3em #ffffffaa);
 }
 
-.card {
-  padding: 2em;
+.social-links p {
+  margin: 0;
+  font-size: 2em;
+  font-family: sans-serif;
+  padding: 0.5em;
 }
 
-.read-the-docs {
-  color: #888;
+.app-container {
+  display: flex;
+}
+
+.about-me, .clock-and-socials {
+  flex: 1;
+}
+
+.about-me {
+  text-align: center;
+  padding: 0 2em;
+}
+
+.about-me p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.clock-and-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  font-size: 24px;
+  margin-bottom: 20px; /* Adjust based on your design */
 }

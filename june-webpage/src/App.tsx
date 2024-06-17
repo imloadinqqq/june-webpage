@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react';
+import githubLogo from './assets/github-mark-white.png'
+import discordLogo from './assets/discord-mark-white.png'
+import linkedinLogo from './assets/in-blue.png'
+import steamLogo from './assets/steam.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // State to hold the current time
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.title = "Alex's Webpage";
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <div className="clock-and-socials">
+        <div className="clock">
+          {currentTime.toLocaleTimeString()}
+        </div>
+        <div className="social-links">
+          <p>Social Links</p>
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+            <img src={discordLogo} alt="Discord" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <img src={githubLogo} alt="GitHub" />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinLogo} alt="LinkedIn" />
+          </a>
+          <a href="https://steamcommunity.com" target="_blank" rel="noopener noreferrer">
+            <img src={steamLogo} alt="Steam" />
+          </a>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <div className="about-me">
+        <h1>About Me</h1>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Hello! My name is Alex Diaz and I'm an aspiring web developer. I love to learn new things and love to solve problems.
+          Currently making this website to learn more about web development and to showcase my skills. Feel free to take a look at my socials
+          on the left! Have a great day.
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
