@@ -9,6 +9,7 @@ function App() {
   // State to hold the current time
   const [currentTime, setCurrentTime] = useState(new Date());
 
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -37,10 +38,10 @@ function App() {
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">
             <img src={githubLogo} alt="GitHub" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/alex-diaz-1560a928a/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinLogo} alt="LinkedIn" />
           </a>
-          <a href="https://steamcommunity.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://steamcommunity.com/id/minecraftman0513" target="_blank" rel="noopener noreferrer">
             <img src={steamLogo} alt="Steam" />
           </a>
         </div>
